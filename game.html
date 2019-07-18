@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Полицейские и мошенники</title>
+    
+    <!--from server-->    
+    <script src="../js/jquery.js" type="text/javascript"></script><!--required-->
+    <script src="../js/jquery.signalR.js" type="text/javascript"></script><!--required-->  
+    <script src="../js/gameApi.js" type="text/javascript"></script><!--required-->
+    <!---->    
+    
+    <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+<body>
+	<div class="container dark" style="">
+		<div class="header">
+			<h1>Полицейские и мошенники</h1>
+			<div>Смена ролей</div>
+			<div class="progress">
+				<div class="progress-bar" id="progressBar" style="width: 0%;">
+				</div>
+			</div>
+		</div>
+		<div class="left team-data">	
+			<div class="team-data-label team-caption">Название: <span id="ftName" class="team-data-value">Синяки</span></div>
+			<div class="team-data-label">Очки: <span id="ftScore" class="badge">0</span></div>
+			<div class="team-data-label">Осталось жизней: <span id="ftLifes" class="badge">5</span></div>
+			
+			<br><br>
+			
+			<div class="team-data-label team-caption">Название: <span id="stName" class="team-data-value">Курилки</span></div>
+			<div class="team-data-label">Очки: <span id="stScore" class="badge">0</span></div>
+			<div class="team-data-label">Осталось жизней: <span id="stLifes" class="badge">5</span></div>
+		</div>
+
+		<div class="right">
+			<textarea class="log-box dark" id="log" readonly></textarea>
+			
+		</div>
+
+		<div class="center">			
+			<canvas id="map" class="map"></canvas>	
+		</div>
+		
+		<div class="footer text-center">			
+			<div class="btn-group dialog-group dark">
+				<button id="btnStart" class="btn-green" onclick="start()">Старт</button>
+				<button id="btnStop" class="btn-dialog" onclick="stop()">Стоп</button>
+				<button id="btnJoin" class="btn-dialog" onclick="join()">Подключиться</button>		
+				<button id="btnLeave" class="btn-dialog" onclick="leave()">Отключиться</button>	
+				<button id="btnReconnect" class="btn-dialog" onclick="reconnect()">Переподключение</button>
+				<button id="btnCancel" class="btn-warn" onclick="cancel()">Отменить игру</button>
+				<button id="btnExit" class="btn-warn" onclick="exit()">Выход</button>
+			</div>
+		</div>
+	</div>
+	
+	<script src="../js/jsHelper.js" type="text/javascript"></script>
+	<script src="../js/wrapper.js" type="text/javascript"></script>
+	<script src="game.js" type="text/javascript"></script>
+</body>
+</html>
